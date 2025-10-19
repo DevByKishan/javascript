@@ -40,46 +40,71 @@
             <div class="flex justify-between align-middle">
                 <h6 class="align-middle">Task List</h6>
                 <button type="button" class="inline-flex bg-blue-900 px-4 py-1 text-white rounded-full"
-                    onclick="add_task()">Add
-                    task</button>
+                    onclick="add_task()">Add Task</button>
             </div>
             <hr class="border-t-1 border-gray-950/5 mt-5">
+
+            <p id="displayArea" class="mt-20 text-lg"></p>
         </div>
 
-        <div id="task_add" class="absolute inset-0 content-center items-center text-center" style="display: none;">
-
-            <form action="">
-                <label for="name">Name</label>
-                <input type="text" name="" id="" class="outline-1 bg-white/5">
-                <label for="name">Name</label>
-                <input type="text" name="" id="" class="outline-1 bg-white/5">
-                <label for="name">Name</label>
-                <input type="text" name="" id="" class="outline-1 bg-white/5">
-                <label for="name">Name</label>
-                <input type="text" name="" id="" class="outline-1 bg-white/5">
+        <div id="task_box" class="absolute inset-0 content-center items-center text-center mt-10"
+            style="display: none;">
+            <form id="task_form">
+                <label for="task_input">Name</label>
+                <input type="text" id="task_input" class="outline outline-1 bg-white/5 text-white rounded p-1">
                 <br>
                 <button class="inline-flex bg-green-900 mt-3 px-4 py-1 text-white rounded-full">Done</button>
             </form>
-
         </div>
+
     </section>
 
 
-
-    </div>
-
     <script>
 
-        var task_add = document.getElementById("task_add");
 
+        // var task_add = document.getElementById("task_add");
+        // var displayArea = document.getElementById("displayArea");
+
+        // function add_task() {
+        //     let inputValue = task_add.value;
+        //     if (task_add.style.display === "none") {
+        //         task_add.style.display = "block"; // Show
+        //     } else {
+        //         task_add.style.display = "none"; // Hide
+        //         displayArea.innerHTML = "You entered: " + inputValue;
+        //         console.log(inputValue)
+        //     }
+
+
+        // }
+
+
+        const taskBox = document.getElementById("task_box");
+        const inputField = document.getElementById("task_input");
+        const displayArea = document.getElementById("displayArea");
+        const form = document.getElementById("task_form");
+
+        // ✅ Handle Add Task button click
         function add_task() {
-            if (task_add.style.display === "none") {
-                task_add.style.display = "block"; // Show
+            if (taskBox.style.display === "none") {
+                taskBox.style.display = "block"; // Show the form
             } else {
-                task_add.style.display = "none"; // Hide
-
+                taskBox.style.display = "none"; // Hide the form
             }
         }
+
+        // ✅ Handle form submission
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Stop page reload
+
+            const inputValue = inputField.value;
+
+            // Hide form and display entered value
+            taskBox.style.display = "none";
+            displayArea.innerHTML = "You entered: " + inputValue;
+            console.log(inputValue);
+        });
 
     </script>
 </body>
