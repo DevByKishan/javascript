@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/all.css">
+    <link rel="" href="style.css">
+    <title>Todo_list</title>
+</head>
+
+<body>
+    <section class="flex h-screen relative ">
+        <div class=" bg-blue-50 w-1/6 p-5">
+            <h1 class="text-2xl font-semibold">Welcome</h1>
+            <!-- <hr class="border-t-1 border-teal-500 mt-5"> -->
+
+            <h5 class="mt-10">Task Name</h5>
+            <hr class="border-t-1 my-3 border-gray-950/5">
+            <h5 class="">Task Name</h5>
+            <hr class="border-t-1 my-3 border-gray-950/5">
+            <h5 class="">Task Name</h5>
+            <hr class="border-t-1 my-3 border-gray-950/5">
+            <h5 class="">Task Name</h5>
+
+            <div class="absolute bottom-9 flex align-middle">
+                <div class="inline-flex rounded-md bg-blue-300 p-2">
+                    <i class="fa-solid fa-user rounded-full"></i>
+
+                </div>
+                <span class="ps-2">User Name</span>
+
+            </div>
+
+        </div>
+
+        <div class="bg-white-500 w-5/6 p-5">
+
+            <div class="flex justify-between align-middle">
+                <h6 class="align-middle">Task List</h6>
+                <button type="button" class="inline-flex bg-blue-900 px-4 py-1 text-white rounded-full"
+                    onclick="add_task()">Add
+                    task</button>
+            </div>
+            <hr class="border-t-1 border-gray-950/5 mt-5">
+        </div>
+
+        <div id="task_add" class="absolute inset-0 content-center items-center text-center" style="display: none;">
+
+            <form action="">
+                <label for="name">Name</label>
+                <input type="text" name="" id="" class="outline-1 bg-white/5">
+                <label for="name">Name</label>
+                <input type="text" name="" id="" class="outline-1 bg-white/5">
+                <label for="name">Name</label>
+                <input type="text" name="" id="" class="outline-1 bg-white/5">
+                <label for="name">Name</label>
+                <input type="text" name="" id="" class="outline-1 bg-white/5">
+                <br>
+                <button class="inline-flex bg-green-900 mt-3 px-4 py-1 text-white rounded-full">Done</button>
+            </form>
+
+        </div>
+    </section>
+
+
+
+    </div>
+
+    <script>
+
+        var task_add = document.getElementById("task_add");
+
+        function add_task() {
+            if (task_add.style.display === "none") {
+                task_add.style.display = "block"; // Show
+            } else {
+                task_add.style.display = "none"; // Hide
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
