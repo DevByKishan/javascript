@@ -44,18 +44,17 @@
             </div>
             <hr class="border-t-1 border-gray-950/5 mt-5">
 
-            <p id="displayArea" class="mt-20 text-lg"></p>
+            <p id="display_area" class="mt-20 text-lg"></p>
         </div>
 
-        <div id="task_box" class="absolute inset-0 content-center items-center text-center mt-10"
-            style="display: none;">
-            <form id="task_form">
-                <label for="task_input">Name</label>
-                <input type="text" id="task_input" class="outline outline-1 bg-white/5 text-white rounded p-1">
-                <br>
-                <button class="inline-flex bg-green-900 mt-3 px-4 py-1 text-white rounded-full">Done</button>
-            </form>
-        </div>
+
+        <form id="task_form" style="display: none;" class="absolute inset-0 content-center items-center text-center mt-10">
+
+            <label for="task_input">Name</label>
+            <input type="text" id="task_input" class="bg-blue-50 text-black rounded p-1 ">
+            <br>
+            <button class="inline-flex bg-green-900 mt-3 px-4 py-1 text-white rounded-full">Done</button>
+        </form>
 
     </section>
 
@@ -63,52 +62,29 @@
 
     <script>
 
-
-        // var task_add = document.getElementById("task_add");
-        // var displayArea = document.getElementById("displayArea");
-
-        // function add_task() {
-        //     let inputValue = task_add.value;
-        //     if (task_add.style.display === "none") {
-        //         task_add.style.display = "block"; // Show
-        //     } else {
-        //         task_add.style.display = "none"; // Hide
-        //         displayArea.innerHTML = "You entered: " + inputValue;
-        //         console.log(inputValue)
-        //     }
-
-
-        // }
-
-
-        const taskBox = document.getElementById("task_box");
-        const inputField = document.getElementById("task_input");
-        const displayArea = document.getElementById("displayArea");
-        const form = document.getElementById("task_form");
-
-        // ✅ Handle Add Task button click
-        function add_task() {
-            if (taskBox.style.display === "none") {
-                taskBox.style.display = "block"; // Show the form
-            } else {
-                taskBox.style.display = "none"; // Hide the form
-            }
-        }
-
-        // ✅ Handle form submission
-        form.addEventListener("submit", function (event) {
-            event.preventDefault(); // Stop page reload
-
-            const inputValue = inputField.value;
-
-            // Hide form and display entered value
-            taskBox.style.display = "none";
-            displayArea.innerHTML = "You entered: " + inputValue;
-            console.log(inputValue);
-        });
+        const taskForm = document.getElementById("task_form");
+        const taskInput = document.getElementById("task_input");
+        const displayArea = document.getElementById("display_area");
 
 
         
+        function add_task(){
+            if(taskForm.style.display === "none"){
+                taskForm.style.display = "block"
+            }else{
+                taskForm.style.display = "none"
+            }
+        }
+
+        taskForm.addEventListener("submit", function(e){
+            e.preventDefault();
+            const shoeValue = taskInput.value;
+
+             taskForm.style.display = "none"
+            displayArea.innerHTML = "Your Data " + shoeValue;
+
+        })
+
     </script>
 </body>
 
