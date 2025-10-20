@@ -48,10 +48,15 @@
         </div>
 
 
-        <form id="task_form" style="display: none;" class="absolute inset-0 content-center items-center text-center mt-10">
+        <form id="task_form" style="display: none;"
+            class="absolute inset-0 content-center items-center text-center mt-10">
 
             <label for="task_input">Name</label>
-            <input type="text" id="task_input" class="bg-blue-50 text-black rounded p-1 ">
+            <input type="text" id="name_input" class="bg-blue-50 text-black rounded p-1 "> <br> <br>
+            <label for="task_input">Emaile</label>
+            <input type="email" id="email_input" class="bg-blue-50 text-black rounded p-1 "> <br> <br>
+            <label for="task_input">Number</label>
+            <input type="number" id="number_input" class="bg-blue-50 text-black rounded p-1 ">
             <br>
             <button class="inline-flex bg-green-900 mt-3 px-4 py-1 text-white rounded-full">Done</button>
         </form>
@@ -63,26 +68,36 @@
     <script>
 
         const taskForm = document.getElementById("task_form");
-        const taskInput = document.getElementById("task_input");
+        const nameInput = document.getElementById("name_input"); //input name ID
+        const emailInput = document.getElementById("email_input"); //input email ID
+        const numberInput = document.getElementById("number_input"); //input number ID
         const displayArea = document.getElementById("display_area");
 
-
-        
-        function add_task(){
-            if(taskForm.style.display === "none"){
+        function add_task() {
+            if (taskForm.style.display === "none") {
                 taskForm.style.display = "block"
-            }else{
+            } else {
                 taskForm.style.display = "none"
             }
         }
 
-        taskForm.addEventListener("submit", function(e){
+        taskForm.addEventListener("submit", function (e) {
             e.preventDefault();
-            const shoeValue = taskInput.value;
+            const shoenameValue = nameInput.value;
+            const shoeemailValue = emailInput.value;
+            const shoenumberValue = numberInput.value;
 
-             taskForm.style.display = "none"
-            displayArea.innerHTML = "Your Data " + shoeValue;
+            console.log("Your Data " + shoenameValue + shoeemailValue + shoenumberValue)
 
+            taskForm.style.display = "none"
+            displayArea.style.color = "blue";
+            displayArea.style.fontSize = "18px";
+            displayArea.style.backgroundColor = "lightyellow";
+            displayArea.style.padding = "10px";
+            displayArea.style.borderRadius = "8px";
+            displayArea.innerHTML = "Your name " + shoenameValue + " Your ID " + shoeemailValue + " Your number " + shoenumberValue;
+
+           
         })
 
     </script>
