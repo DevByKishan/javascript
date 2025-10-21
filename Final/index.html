@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="" href="styles.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.1.0/css/all.css">
-    <link rel="" href="style.css">
+
     <title>Todo_list_2</title>
 </head>
 
@@ -14,15 +15,19 @@
     <section class="flex h-screen relative ">
         <div class=" bg-blue-50 w-1/6 p-5">
             <h1 class="text-2xl font-semibold">Welcome</h1>
-            <!-- <hr class="border-t-1 border-teal-500 mt-5"> -->
 
-            <h5 class="mt-10">Task Name</h5>
+            <div class="flex justify-between align-middle mt-10" id="dashboard_Value">
+                <input type="text" id="task_Title" class=" border-1 border-gray-950/5 w-5/6">
+                <button class="w-1/6" id="add_dashborad" >+</button>
+            </div>
+
             <hr class="border-t-1 my-3 border-gray-950/5">
-            <h5 class="">Task Name</h5>
-            <hr class="border-t-1 my-3 border-gray-950/5">
-            <h5 class="">Task Name</h5>
-            <hr class="border-t-1 my-3 border-gray-950/5">
-            <h5 class="">Task Name</h5>
+
+            <div id="input_inner" style="display: none;" class="flex">
+                <p id="title_Name"></p>
+                <button onclick="closeBtn()" id="close_Btn_ID"> X</button>
+            </div>
+
 
             <div class="absolute bottom-9 flex align-middle">
                 <div class="inline-flex rounded-md bg-blue-300 p-2">
@@ -60,57 +65,10 @@
             <input type="number" id="number_input" class="bg-blue-50 text-black rounded p-1 ">
             <br>
             <button class="inline-flex bg-green-900 mt-3 px-4 py-1 text-white rounded-full">Done</button>
-            <button id="close_Btn" class="inline-flex bg-red-900 mt-3 px-4 py-1 text-white rounded-full ">Close</button>
+            <button id="close_Btn" class="inline-flex bg-red-900 mt-3 px-4 py-1 text-white rounded-full " onclick="form_Close()">Close</button>
         </form>
 
     </section>
-
-
-
-    <script>
-        let taskCount = 0;
-        const taskForm = document.getElementById("task_form");
-        const closeBtn = document.getElementById("close_Btn");
-
-        const displayArea = document.getElementById("display_area");
-
-        closeBtn.addEventListener("click", function (e) {
-             e.preventDefault();
-            if (taskForm.style.display = "block") {
-                taskForm.style.display = "none"
-            }
-        });
-
- 
-        function add_task() {
-            if (taskForm.style.display === "none") {
-                taskForm.style.display = "block"
-
-            } else {
-                taskForm.style.display = "block"
-            }
-        }
-
-        // add method
-
-        taskForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            taskCount++;
-            const name = document.getElementById("name_input").value;
-            const email = document.getElementById("email_input").value;
-            const number = document.getElementById("number_input").value;
-            displayArea.innerHTML += `<p> <b>Task ${taskCount} </b> Name: ${name}, Email: ${email}, Number: ${number}</p>`;
-
-            taskForm.reset();
-
-        });
-
-
-
-
-
-
-    </script>
+<script src="script.js"></script>
 </body>
-
 </html>
