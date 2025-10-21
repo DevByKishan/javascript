@@ -26,7 +26,6 @@ addDashborad.addEventListener("click", function (e) {
     console.log(fatch_data)
     titleName.innerHTML += `<p>${fatch_data} </p>`
 
-
 });
 
 
@@ -41,14 +40,7 @@ function add_task() {
 
     if (taskForm.style.display === "none") {
         taskForm.style.display = "block";
-
-    }
-    else (taskForm.style.display = "block");
-}
-function form_Close() {
-    if (taskForm.style.display === "block") {
-        taskForm.style.display = "none";
-
+        
         taskForm.addEventListener("submit", function (e) {
             e.preventDefault();
             taskCount++;
@@ -61,12 +53,22 @@ function form_Close() {
             fatch_numberInput = numberInput.value;
 
             displayArea.innerHTML += `<p><b>Task ${taskCount} </b> Name: ${fatch_nameInput}  |  Email: ${fatch_emailInput}  |  number: ${fatch_numberInput}</p>`
+
+            
+            taskForm.reset();
         })
-
-
+        
 
     }
+    else (taskForm.style.display = "block");
+}
+function form_Close() {
+    if (taskForm.style.display === "block") {
+        taskForm.innerHTML = "";
+    }
     else (displayArea.style.display = "none");
+
+
 }
 
 
