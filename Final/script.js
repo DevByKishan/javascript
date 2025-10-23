@@ -5,10 +5,7 @@ const inputInner = document.getElementById("input_inner");
 
 function closeBtn() {
     if (inputInner.style.display === "block") {
-        inputInner.style.display = "none";
-    }
-    else {
-        inputInner.style.display = "block";
+        inputInner.innerHTML = "";
     }
 }
 
