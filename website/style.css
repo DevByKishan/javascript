@@ -189,7 +189,7 @@ marquee{
 }
 .event_author_name{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-;
   align-items: center;
  
 }
@@ -199,4 +199,29 @@ marquee{
   background-color: var(--td-border-1);
   display: inline-block;
   margin: auto 15px;
+}
+
+
+/* speakers */
+
+
+.speakers_box{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+.speakers_img{
+  justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+
+}
+.speakers_img img{
+
+  position: relative;
+}
+.speakers_name{
+  position: absolute;
+  margin-bottom: -50px ;
 }
