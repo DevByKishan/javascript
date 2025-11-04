@@ -16,6 +16,12 @@
 h2{
   font-size: 36px;
 }
+h3{
+  font-size: 24px !important;
+}
+span{
+  font-size: 14px;
+}
 .btn_pink{
   background-color: var(--td-theme-secondary);
   padding: 10px 20px;
@@ -174,10 +180,23 @@ marquee{
   width: 80%;
 }
 .img_div{
-  width: 35%;
-  height: 300px;
+  width: 50%;
+  height: 250px;
   background-image: url(./img/thumb-1.jpg);
   background-size: cover;
   background-position: center;
   border-radius: 10px;
+}
+.event_author_name{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+.dvdr{
+  width: 2px;
+  height: 40px;
+  background-color: var(--td-border-1);
+  display: inline-block;
+  margin: auto 15px;
 }
